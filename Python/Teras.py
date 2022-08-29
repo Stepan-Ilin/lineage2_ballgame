@@ -3,6 +3,7 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 #custom_config = r'--oem 3 --psm 13'
 import cv2
 import pyscreenshot as ps
+
 import numpy
 from mss import mss
 from PIL import Image
