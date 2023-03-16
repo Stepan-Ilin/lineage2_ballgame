@@ -26,7 +26,7 @@ t.join(0.1)
 def pers_work():
     while True:
         print(f"While sleep {115}s ....")
-        time.sleep(5)
+        time.sleep(7)
         keyboard.press_and_release('f1')
         time.sleep(105)
         print(f"stop {115}")
