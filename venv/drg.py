@@ -8,15 +8,14 @@ def handles_asterios():
     #print("pid Process name")
     e = f.Win32_Process()
     # Iterating through all the running processes
-    count = 0
+
     l_process = []
     for process in e:
         if process.Name == 'AsteriosGame.exe':
-
             l_process.append([process.UserModeTime, process.ProcessId])
             #print(f'{count} index {process.Name} {process.UserModeTime} {process.ProcessId} ')
             #print(l_process)
-            count += 1
+
     handles=[]
     q1 = int(l_process[0][0])
     q2 = int(l_process[1][0])
