@@ -70,8 +70,8 @@ def PostKeyEx(hwnd, key, shift, specialkey):
             SendMessage(hwnd, msg_up, key, lparam | 0xC0000000)
 
 
-hwnd = 0x00730B48
-hwnd1 = 0x001F0336
+#hwnd = 0x00730B48
+#hwnd1 = 0x001F0336
 #hwnd1 = 0x00160872
 
 
@@ -150,6 +150,36 @@ def pers_work():
         if counter == 10:
             counter = 0
 
+def vark_baf():
+    counter = 0
+    while True:
+        counter += 1
+        print(f"While sleep {285}s ....")
+
+        # keyboard.press_and_release('f2')
+        # keyboard.press_and_release('f2')
+        print(counter)
+
+        if len(pid_wins) == 1:
+
+            if counter == 0:
+                print(f'qqqq{counter}')
+                time.sleep(3)
+
+        if len(pid_wins) == 2:
+
+            PostKeyEx(hwnd2, ord('1'), [win32con.VK_MENU], False)
+
+            #if counter == 1:
+                #PostKeyEx(hwnd2, ord('2'), [win32con.VK_MENU], False)
+
+        time.sleep(285)
+        print(f"stop {285}")
+
+        if counter == 10:
+            counter = 0
+
+
 #def main():
 ahk = AHK()
 e = time.time()
@@ -187,7 +217,7 @@ while True:
     if key == "o":
         print("You pressed o")
 
-        t = threading.Thread(target = pers_work(), daemon=True)
+        t = threading.Thread(target = vark_baf(), daemon=True)
         t.start()
         t.join(0.1)
 
