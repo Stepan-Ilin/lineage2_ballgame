@@ -1,38 +1,38 @@
-#from ahk import AHK
+from ahk import AHK
 #from ahk.window import Window
 import time
 import threading
 
 import keyboard
-#ahk = AHK()
-a = 0
+import pygame
+from pynput.mouse import Controller
+
+
+ahk = AHK()
+
 def test():
+    mouse = Controller().position
+
+    print()
     while True:
-        global a
-        print(f'a = {a}')
-        time.sleep(0.1)
-        if a == 1:
-            print(f"a = {a} ")
-            time.sleep(4)
-            a = 0
-            break
-
-
-t = threading.Thread(target= test, daemon=True)
-t.start()
-t.join(0.1)
+        print(mouse)
+        cur = Controller().position
+        ahk.click(mouse)
+        ahk.click()
+        #ahk.mouse_move(cur)
+        time.sleep(120)
 
 
 def pers_work():
     while True:
         print(f"While sleep {115}s ....")
-        time.sleep(5)
+        time.sleep(7)
         keyboard.press_and_release('f1')
         time.sleep(105)
         print(f"stop {115}")
 
 while True:
-    print('gffgsgsoopoppooooooo')
+    print('Начало')
     key = keyboard.read_key()
     if key == "o":
 
@@ -47,7 +47,12 @@ while True:
         break
 
     elif key == "[":
-        a = 1
+        t = threading.Thread(target=test, daemon=True)
+        t.start()
+        t.join(0.1)
+
+
+
 
 
 
